@@ -1,0 +1,13 @@
+0-202-78345-X appeared 19 times 
+0-202-78345-A appeared 8 times 
+0-202-78345-B appeared 9 times 
+0-202-78345-C appeared 2 times 
+
+Technically these are grouped together, but only in runs. 
+
+If you had 1 1 1 1 1 2 2 2 1 1 1 
+
+It would count the first group of 1s then the 2s then the 1s but not group the second set of 1s 
+This is likely due to the fact the file is not being enumerate through for each item
+The If statment will reset the count once it finds a different value
+I think this is fine for now, but may need to resvist this to make it better

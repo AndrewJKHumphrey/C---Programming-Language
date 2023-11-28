@@ -1,0 +1,2 @@
+//For a mortage payment, double would probably be best since single isn't as precise and doesn't always save on resources compared to a double.
+//Meanwhile long double might be unneeded while also costing more resources
