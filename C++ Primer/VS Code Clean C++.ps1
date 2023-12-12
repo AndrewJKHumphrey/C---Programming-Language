@@ -1,4 +1,4 @@
-﻿$chapter = 4;
+﻿$chapter = 5;
 
 $path = "C:\Projects\Current Projects\C++ Programming Language\C++ Primer\Chapter " + $chapter;
 
@@ -10,5 +10,4 @@ foreach($file in $files) {
         Remove-Item $file.FullName;
         
     }
-
 }

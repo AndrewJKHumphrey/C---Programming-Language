@@ -14,7 +14,7 @@ int main()
     int k = 1;
 
     //This appears to be if i does not equal j, j > k
-    //But I have my doubts since the statement is i != j && j < k
+    //But I have my doubts since the statement is not i != j && j < k
 
     //It will likely do i != j first, which will be 1 or 0
     //Then it will check if k < 1 or 0

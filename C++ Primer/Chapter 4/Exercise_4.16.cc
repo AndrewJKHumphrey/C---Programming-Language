@@ -16,6 +16,7 @@ int getPtr()
 }
 
 int main()
+
 {
     int p, i;
 
