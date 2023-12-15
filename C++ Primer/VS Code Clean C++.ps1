@@ -1,6 +1,7 @@
 ﻿$chapter = 5;
 
-$path = "C:\Projects\Current Projects\C++ Programming Language\C++ Primer\Chapter " + $chapter;
+$path = "C:\Projects\Current Projects\C++ Programming Language\C++ Primer";
+$path += "\Chapter " + $chapter;
 
 $files =  Get-Childitem -Recurse $path;
 
