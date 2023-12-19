@@ -1,4 +1,4 @@
-﻿$chapter = 5;
+﻿$chapter = 6;
 
 $path = "C:\Projects\Current Projects\C++ Programming Language\C++ Primer";
 $path += "\Chapter " + $chapter;
