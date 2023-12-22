@@ -17,6 +17,11 @@ string (*hardWay(string)) [10] {
     return p2;
 } 
 
+//Type Alias
+typedef string aliasArr[10]; 
+//using aliasArr = string[10]; This would work as well
+aliasArr* typeAlias(string i);
+
 //decltype method
 string cold[] = {"snow", "ice", "sleet"};
 string hot[] = {"sand", "desert", "sandstorm"};
@@ -25,13 +30,15 @@ decltype(cold) *deType(string s)
     return  s == *(&cold[1]) ? &cold : &hot; 
 }
 
-auto trailReturn(string i) -> string(*)[10];
+//Trailing Return
+auto trailReturn(string s) -> string(*)[10];
 
 int main()
 {
     string arr[10];
     auto hdarr = hardWay("test");
-    auto dtarr = decType("test");
-    auto hdarr = hardWay("test");
+    auto taarr = typeAlias("test");
+    auto dtarr = deType("test");
+    auto hdarr = trailReturn("test");
     return 0;
 }
