@@ -15,8 +15,16 @@ decltype(odd) *arrPtr(int i)
 #include <string> 
 using std::cout, std::cin, std::endl, std::string,  std::vector, std::begin, std::end, std::runtime_error;
 
+
+int odd[] = {1,3,5,7,9};
+int even[] = {0,2,4,6,8};
+decltype(odd) &arrRef(int i)
+{
+    return (i % 2) ? odd : even;
+} 
+
 int main()
 {
-
+    auto test = arrRef(10);
     return 0;
 }
