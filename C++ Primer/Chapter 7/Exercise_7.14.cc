@@ -1,6 +1,6 @@
 /*
- Exercise 7.12: Move the definition of the Sales_data constructor that takes an
- istream into the body of the Sales_data class.
+Exercise 7.14: Write a version of the default constructor that explicitly initializes 
+the members to the values we have provided as in-class initializers.
 */
 
 #include <iostream>
@@ -13,10 +13,10 @@ using std::cout, std::cin, std::endl, std::string,  std::vector, std::begin, std
 struct Sales_data
 {
     //Added values
-    Sales_data() = default;
+    Sales_data() = default; //I did this already in a previous exercise
     Sales_data(const string &s): bookNum(s) {}
     Sales_data(const string &s, unsigned n, double p): bookNum(s), units_sold(n), revenue(p*n) {}
-    Sales_data(std::istream &);
+    Sales_data(std::istream &is);
 
     //Previous values
     string isbn() const { return bookNum; };
@@ -79,8 +79,7 @@ Sales_data add(const Sales_data &item1, const Sales_data &item2)
 
 ostream &print(ostream &os, const Sales_data &item)
 {
-    double price = 0;
-    os << item.bookNum << item.units_sold << price << item.revenue << item.avg_price();
+    os << item.bookNum << " " << item.units_sold << " " << item.revenue << " " << item.avg_price();
     //No newline since we don't want formatting headaches, let the calling code work that out
 
     //Within this function, all that is being done is printing off the object's values
@@ -106,16 +105,16 @@ ostream &print(ostream &os, const Person &person)
 
 int main()
 {
-    Sales_data book1 = Sales_data("978-3-16-148410-0"); //bookNum
-    Sales_data book2 = Sales_data("978-3-16-148410-1", 1000, 10.00); //bookNum, units_sold, revenue (price * units_sold)
-    Sales_data book3 = Sales_data(cin);
-
-    Sales_data total; // variable to hold data for the next transaction
+    cout << "STARTING PROGRAM" << "\n";
+    cout << "READING FIRST TRANSACTION" << "\n";
+    Sales_data total = Sales_data(cin); // variable to hold data for the next transaction
     // read the first transaction and ensure that there are data to process
-    if (read(cin, total)) {
+    cout << "READ FIRST TRANSACTION" << "\n";
+    if (!total.isbn().empty()) {
+        cout << "READING THE REST" << "\n";
         Sales_data trans; // variable to hold the running sum
         // read and process the remaining transactions
-        while (read(cin, total)) {
+        while (!total.isbn().empty()) {
             // if we’re still processing the same book
             if (total.isbn() == trans.isbn())
                 total.combine(trans); // update the running total
