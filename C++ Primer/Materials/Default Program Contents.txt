@@ -3,7 +3,11 @@
 
 #include <iostream>
 #include <vector>
-using std::cout, std::cin, std::endl, std::string,  std::vector, std::begin, std::end, std::runtime_error;
+#include <string>
+#include <istream>
+#include <ostream>
+using std::cout, std::cin, std::endl, std::string,  std::vector, std::begin, std::end, std::runtime_error, std::istream, std::ostream;
+
 
 int main()
 {
